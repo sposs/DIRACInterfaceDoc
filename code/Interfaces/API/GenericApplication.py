@@ -125,6 +125,7 @@ class GenericApplication(Application):
     def _prodjobmodules(self, stepdefinition):
         """
         Add the application, and run the ComputeDataList module (defined in the Application class)
+        This is only used for ProductionJobs (not in the example)
         """ 
         res1 = self._setApplicationModuleAndParameters(stepdefinition)
         res2 = self._setOutputComputeDataList(stepdefinition)
