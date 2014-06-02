@@ -37,11 +37,13 @@ class GenericApplication(Application):
         Can be local file or LFN.
         @type script: string
         """
+        #Check that the specified parameter has the right type. Not quite the right way to do this, but lightweight.
         self._checkArgs({
             'script': types.StringTypes
           })
         if os.path.exists(script) or script.lower().count("lfn:"): # add the file to the application sandbox
             self.inputSB.append(script)
+            
         self.Script = script
         return S_OK()
 
@@ -67,7 +69,7 @@ class GenericApplication(Application):
         @type appdict: dict
 
         """
-        #check that dict has proper structure
+        #check that appdict is a python dictionary
         self._checkArgs({
             'appdict': types.DictType
           })
@@ -84,7 +86,7 @@ class GenericApplication(Application):
         The parameters, for ex. 'script' will become a module member. 
         """
         m1 = self._createModuleDefinition() ## This line MUST be there.
-        ## Below is optional if there are no parameters.
+        ## Below is optional if there are no parameters. The return statement is mandatory.
         m1.addParameter(Parameter("script",      "", "string", "", "", False,
                                   False, "Script to execute"))
         m1.addParameter(Parameter("arguments",   "", "string", "", "", False,
@@ -157,7 +159,7 @@ class GenericApplication(Application):
 
         return S_OK()
 
-    ### Missing methods, not needed for this appliation.
+    ### Missing methods, not needed for this application.
     def _checkWorkflowConsistency(self):
         """ 
         Validate the workflow consistency: If to run an application, another must have ran before, make sure it does.

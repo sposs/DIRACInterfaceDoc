@@ -1,5 +1,5 @@
 """
-API to use to submit jobs in the ILC VO
+API to use to submit jobs in the Ext VO
 
 @since:  June 2, 2014
 
@@ -19,7 +19,7 @@ COMPONENT_NAME = 'Dirac'
 class Dirac(dapi):
     """Dirac is VO specific API Dirac
     
-    Adding specific AL functionalities to the Dirac class, and implement the L{preSubmissionChecks} method
+    Adding specific functionalities to the Dirac class, and implement the L{preSubmissionChecks} method
     """
     def __init__(self, withRepo = False, repoLocation = ''):
         """Internal initialization of the ExtDIRAC API.
@@ -87,7 +87,7 @@ class Dirac(dapi):
         """
         llist = []
         if not self.jobRepo:
-            gLogger.warn( "No repository is initialised" )
+            gLogger.warn( "No repository is initialized" )
             return S_OK()
         jobs = self.jobRepo.readRepository()['Value']
         for jobID in sortList( jobs.keys() ):
@@ -183,7 +183,7 @@ class Dirac(dapi):
         return S_OK()
     
     def _checkdataconsistency(self, useroutputdata, useroutputsandbox):
-        """ Make sure the files are either in OutpuSandbox or OutputData but not both
+        """ Make sure the files are either in OutputSandbox or OutputData but not both
         @param useroutputdata: List of files set in the outputdata
         @param useroutputsandbox: List of files set in the output sandbox
         @return: S_OK() or S_ERROR()
