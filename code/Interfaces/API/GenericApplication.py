@@ -1,5 +1,10 @@
-from ExtDIRAC.Interfaces.API.Application            import Application
+from Interfaces.API.Application                     import Application
 from DIRAC.Core.Workflow.Parameter                  import Parameter
+from DIRAC import S_OK, S_ERROR
+
+
+import types, os
+
 
 class GenericApplication(Application):
     """ Run a script (python or shell) in an application environment.

@@ -10,7 +10,7 @@ __RCSID__ = "$Id: $"
 
 import os, re, types, shutil
 from DIRAC.Core.Utilities.Subprocess                      import shellCall
-from ExtDIRAC.Workflow.Modules.ModuleBase                 import ModuleBase
+from Workflow.Modules.ModuleBase                          import ModuleBase
 from DIRAC                                                import S_OK, S_ERROR, gLogger
 
 class ApplicationScript(ModuleBase):

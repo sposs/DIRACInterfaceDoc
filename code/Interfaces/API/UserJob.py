@@ -6,8 +6,8 @@ User Job class. Used to define (guess what?) user jobs!
 
 '''
 
-from ExtDIRAC.Interfaces.API.Job                             import Job
-from ExtDIRAC.Interfaces.API.Dirac                           import Dirac
+from Interfaces.API.Job                             import Job
+from Interfaces.API.Dirac                           import Dirac
 from DIRAC.Core.Security.ProxyInfo                           import getProxyInfo
 from DIRAC.ConfigurationSystem.Client.Helpers.Registry       import getVOForGroup
 

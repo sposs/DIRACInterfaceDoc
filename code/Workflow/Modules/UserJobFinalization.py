@@ -19,8 +19,8 @@ from DIRAC.Core.Security.ProxyInfo                         import getVOfromProxy
 from DIRAC.Core.Utilities.File import getGlobbedFiles
 
 
-from ALDIRAC.Workflow.Modules.ModuleBase                 import ModuleBase
-from ALDIRAC.Core.Utilities.OutputData                   import constructUserLFNs
+from Workflow.Modules.ModuleBase                         import ModuleBase
+from ALDIRAC.Core.Utilities.OutputData                   import constructUserLFNs ## this is going to be missing
 
 
 from DIRAC                                                 import S_OK, S_ERROR, gLogger, gConfig
